@@ -5,7 +5,7 @@ function playGame(playerInput){
       return 'kamień';
     } else if (argMoveId == 2) {
       return 'papier'
-    } else if (argMoveId= 3) {
+    } else if (argMoveId == 3) {
       return 'nożyce'
     } else{
     printMessage('Nie znam ruchu o id ' + argMoveId + '.');
@@ -39,15 +39,10 @@ function playGame(playerInput){
   }
 
   let randomNumber = Math.floor(Math.random() * 3 + 1);
-  console.log('Wylosowana liczba to: ' + randomNumber);
-
   let computerMove = getMoveName(randomNumber);
-
-  console.log('Gracz wpisał: ' + playerInput);
-
   let playerMove = getMoveName(playerInput);
-
-  let gameResult = displayResult(computerMove, playerMove);
+  
+  displayResult(computerMove, playerMove);
 }
 
 document.getElementById('play-rock').addEventListener('click', function(){
